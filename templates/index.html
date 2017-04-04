@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualization lab2 - Flight data analytics</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='style.css') }}">
+</head>
+<body>
+<center>
+    <h1>Visualization Lab 2</h1>
+    <h2>Data Clustering and Dimension Reduction</h2>
+</center>
+<hr>
+ <div class="row" >
+     <div class="dropdown1">
+        <select id="map1">
+            <option val="Select Task">Select Task</option>
+            <option val="Task 1">Task 1</option>
+            <option val="Task 2">Task 2</option>
+        </select>
+     </div>
+     <div class="dropdown2">
+        <select id="map2" onchange="mapSelect()">
+            <option val="Select sub-task">Select sub-task</option>
+        </select>
+     </div>
+ </div>
+
+<div id = "error"></div>
+<script src = "{{ url_for('static', filename='d3.min.js')}}"></script>
+<script src = "{{ url_for('static', filename='jquery.min.js')}}"></script>
+<script src = "{{ url_for('static', filename='bar.js')}}"></script>
+<style src = "{{ url_for('static', filename='style.css')}}"></style>
+</body>
+</html>
