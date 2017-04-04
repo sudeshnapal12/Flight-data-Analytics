@@ -1,69 +1,35 @@
 <!DOCTYPE html>
-<style>
-.axis path,
-.axis line {
-    fill: none;
-    stroke: #eee;
-    shape-rendering: crispEdges;
-}
- 
-.axis text {
-    font-family: sans-serif;
-    font-size: 11px;
-}
- 
-.loading {
-    font-family: sans-serif;
-    font-size: 15px;
-}
- 
-.circle {
-    fill: #222;
-}
-</style>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>Flight data Analytics</title>
-    <h3>Select Comparision Factor(Green: Random ; Blue: Adaptive)</h3>
-    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="scatterplot.js"></script>
-
-
-    <form action="">
-      <input type="radio" name="reduction" onclick="plot_values('pca.csv')">PCA<br>
-      <input type="radio" name="reduction" onclick="plot_values('iso.csv')">ISO Map<br>
-      <input type="radio" name="reduction" onclick="plot_values('correlation.csv')">MDS Correlation<br>
-      <input type="radio" name="reduction" onclick="plot_values('cosine.csv')">MDS Cosine<br>
-      <input type="radio" name="reduction" onclick="plot_values('euclidean.csv')">MDS Euclidean<br>
-      <input type="radio" name="reduction" onclick="plot_values('sampleFileLSA.csv')">LSA Text Visualization<br>
-    </form>
-    
-    <div id  = "scatter_plot"></div>
-
-    <script type="text/javascript">
-
-    var w = 940;
-    var h = 300;
-    var pad = 20;
-    var left_pad = 100;
-  
-
-    
-    var xScale = d3.scale.linear().range([left_pad, w-pad]);
-    var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
-    
-    var yScale = d3.scale.linear().range([pad, h-pad*2]);
-    var yAxis = d3.svg.axis().scale(yScale).orient("left");
-        
-
-    var svg = d3.select("#scatter_plot")
-                .append("svg")
-                .attr("width", w)
-                .attr("height", h);
-
-</script>
+    <meta charset="UTF-8">
+    <title>Visualization lab2 - Flight data analytics</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='style.css') }}">
 </head>
+<body>
+<center>
+    <h1>Visualization Lab 2</h1>
+    <h2>Data Clustering and Dimension Reduction</h2>
+</center>
+<hr>
+ <div class="row" >
+     <div class="dropdown1">
+        <select id="map1">
+            <option val="Select Task">Select Task</option>
+            <option val="Task 1">Task 1</option>
+            <option val="Task 2">Task 2</option>
+        </select>
+     </div>
+     <div class="dropdown2">
+        <select id="map2" onchange="mapSelect()">
+            <option val="Select sub-task">Select sub-task</option>
+        </select>
+     </div>
+ </div>
 
+<div id = "error"></div>
+<script src = "{{ url_for('static', filename='d3.min.js')}}"></script>
+<script src = "{{ url_for('static', filename='jquery.min.js')}}"></script>
+<script src = "{{ url_for('static', filename='bar.js')}}"></script>
+<style src = "{{ url_for('static', filename='style.css')}}"></style>
+</body>
 </html>
