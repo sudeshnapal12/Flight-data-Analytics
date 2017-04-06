@@ -14,6 +14,6 @@
 * visualize data via MDS (Euclidian & correlation distance) in 2D scatterplots
 * visualize scatterplot matrix of the three highest PCA loaded attributes
 
-# Visualization Lab 3
+# Visualization Lab 3 - Volumen Rendering
 ### Also added the renderings with ImageVis software.
 * Renderings_with_imagevis_task_3 folder
