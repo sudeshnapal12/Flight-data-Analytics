@@ -13,3 +13,7 @@
 * visualize data projected into the top two PCA vectors via 2D scatterplot
 * visualize data via MDS (Euclidian & correlation distance) in 2D scatterplots
 * visualize scatterplot matrix of the three highest PCA loaded attributes
+
+# Visualization Lab 3
+### Also added the renderings with ImageVis software.
+* Renderings_with_imagevis_task_3 folder
